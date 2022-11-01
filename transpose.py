@@ -15,19 +15,19 @@ def main():
 # Returns the transpose of a.
 def _transpose(a):
     # Get the dimensions of matrix a.
-    m = ...  # number of rows in a
-    n = ...  # number of columns in a
+    m = len(a)  # number of rows in a
+    n = len(a[0])  # number of columns in a
 
     # Create an n-by-m matrix c with all elements initialized to 0.0.
-    ...
+    c = stdarray.create2D(n, m, 0.0)
 
     # Fill in the elements of c such that c[i][j] = a[j][i], where 0 <= i < n and 0 <= j < m.
-    for i in range(...):
-        for j in range(...):
-            ...
+    for i in range(n):
+        for j in range(m):
+            c[i][j] = a[j][i]
 
     # Return c.
-    ...
+    return c
 
 
 if __name__ == '__main__':
