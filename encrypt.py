@@ -9,14 +9,14 @@ def main():
     e = int(sys.argv[2])
 
     width = rsa.bitLength(n)
-    text = stdio.readAll()
+    message = stdio.readAll()
 
-    for letter in text:
-        i = ord(letter)
-        y = rsa.encrypt(i, n, e)
-        en = rsa.dec2bin(y, width)
-
-    stdio.writeln(en)
+    for i in range(len(message)):
+        x = ord(message[i])
+        encrypt = rsa.encrypt(x, n, e)
+        binary = rsa.dec2bin(encrypt, width)
+        stdio.write(binary)
+    stdio.writeln()
 
 
 if __name__ == '__main__':

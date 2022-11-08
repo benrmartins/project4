@@ -18,7 +18,7 @@ def _reverse(a):
         # Exchange element at i in a with the element at len(a) - i - 1.
         temp = a[i]
         a[i] = a[len(a) - i - 1]
-        a[len(a) -i -1] = temp
+        a[len(a)-i-1] = temp
 
 
 if __name__ == '__main__':

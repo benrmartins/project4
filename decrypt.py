@@ -9,14 +9,13 @@ def main():
     d = int(sys.argv[2])
 
     width = rsa.bitLength(n)
-    text = stdio.readAll()
+    message = stdio.readAll()
 
-    for i in range(0, len(text) - 1, width):
-        n = text[i: i + width]
-        x = rsa.bin2dec(n)
-        dec = rsa.decrypt(x, n, d)
-
-    stdio.writeln(dec)
+    for i in range(0, len(message) - 1, width):
+        s = message[i:i + width]
+        y = rsa.bin2dec(s)
+        decrypt = rsa.decrypt(y, n, d)
+        stdio.write(chr(decrypt))
 
 
 if __name__ == '__main__':

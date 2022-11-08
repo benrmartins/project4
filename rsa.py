@@ -59,7 +59,6 @@ def dec2bin(n, width):
 
 
 # Returns the decimal representation of n expressed in binary.
-
 def bin2dec(n):
     return int(n, 2)
 
@@ -90,7 +89,7 @@ def _primes(lo, hi):
 
 # Returns a list containing a random sample (without replacement) of k items from the list a.
 def _sample(a, k):
-    #Create a list b that is a copy (not an alias) of a.
+    # Create a list b that is a copy (not an alias) of a.
     b = a[:]
     # Shuffle the first k elements of b.
     for i in range(k):
