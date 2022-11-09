@@ -5,7 +5,7 @@ import sys
 
 # Entry point.
 def main():
-    #  Accept private-key n (int) and d (int) as command-line arguments
+    # Accept private-key n (int) and d (int) as command-line arguments
     n = int(sys.argv[1])
     d = int(sys.argv[2])
 
@@ -20,7 +20,8 @@ def main():
         s = message[i:i + width]
         # Set y to decimal representation of the binary string s.
         y = rsa.bin2dec(s)
-        # character corresponding to the decrypted value, obtained using the built-in function chr().
+        # character corresponding to the decrypted value,
+        # obtained using the built-in function chr().
         decrypt = rsa.decrypt(y, n, d)
         stdio.write(chr(decrypt))
 

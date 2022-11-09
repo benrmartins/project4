@@ -12,35 +12,73 @@
    CS110 grad, TA, other), and the nature of help received.
 
    Name               Status       Help Received
-   ----               ------       -------------
+   yoni               classmate     Discussed the Decryption Program
 
-   ...                ...          ...
+   Prabin Sharma        TA          Discussed the RSA Library (_prime function)
 
 4. Provide a short description of how you approached each problem, issues you 
    encountered, and how you resolved those issues.
 
    Problem 1 (RSA Library)
-      Approach: ...
+      Approach: First, for the keygen function I stored prime numbers between the function arguments in a list
+      _primes(lo, hi). Then I got two random prime numbers from the list _sample(prime, 2). After that I set
+      n and m to pq. Then I check if e does not divide m by looping using a while loop. Lastly I stored the numbers
+      into a tuple and returned it. After that I encrypted and decryption using the function arguments and returning
+      it. x ** e % n. For the prime function I created a list to store the prime numbers. Then looped through the
+      numbers from range of the for loop. Inputting the number in the list if it's a prime number by making sure the
+      value of i is greater than 2. For the sample function I made a copy of the list and shuffled the first
+      k elements of b by looping through and exchanging the variables with each other. Lastly I returned a list containing
+      the first k elements of b. For the last function I got a random number r ∈ [0, l), where l is the number of
+      elements in a and returned it. stdrandom.uniformInt(0, len(a)).
 
-      Issues and resolution: ...
+      Issues and resolution: I had difficulty with the primes function. It was causing a logic error, the terminal
+      did not show an error but the output was different. I was looping through using a for loop and checking if the
+      numbers in the list were prime. I found distinguishing between a prime number and a non-prime number was not the problem
+      because I have done it before. I should have used an if and continue statement to make sure the value of i is greater than 2.
+      due to the fact 1 and 0 cannot be prime numbers. After doing that, only prime numbers were added to the list.
+
 
    Problem 2 (Keygen Program)
-      Approach: ...
+      Approach: For this problem first I accept lo (int) and hi (int) as command-line arguments. Then I got public/private
+      keys as a tuple, using a function from RSA key = rsa.keygen(lo, hi). Then I looped through the three values in the tuple
+      by using a for loop and the length of the tuple Next I printed out the values separated by a space stdio.write(str(key[i]) + " ")
 
-      Issues and resolution: ...
+      Issues and resolution: For this problem I did not run into a large issues. But I had difficulty with having public/private
+      keys as a tuple. I was trying to recreate a function that I already have created in rsa. I realized that I should have just use
+      the file from rsa to get the function keygen and store it into a variable key = rsa.keygen(lo, hi). After doing that, I
+      saved lots of time and line of code in the problem.
 
    Problem 3 (Encryption Program)
-      Approach: ...
+      Approach: For this problem I first accepted n (int) and e (int) as command-line arguments. Then I had to get the number
+      of bits per character (call it width) needed for encryption rsa.bitLength(n). Then I stored the text into a variable in the
+      command line. After that I looped through each letter in the message. Then I encrypted each letter using a function from the
+      rsa file and stored it into a variable rsa.encrypt(x, n, e) encrypt = rsa.dec2bin(y, width). Lastly I displayed the encrypted
+      message
 
-      Issues and resolution: ...
+      Issues and resolution: For this problem I was able to figure it out pretty easily. Because of the previous problem
+      I did, I knew I can just link the rsa encryption function to the encryption file. A small logic error that I had was that
+      I forgot I needed to add a new line at the end. I was so confused why the problem was not working because I knew I did it correctly,
+      I should have read the directions better, and after I fixed it, it worked.
 
    Problem 4 (Decryption Program)
-      Approach: ...
+      Approach: For the Decryption Program first I accepted private-key n and d as command-line arguments. Then I got the number of
+      bits per character rsa.bitLength(n). Then I stored the text into a variable in the command line. After that I looped through
+      the length of the message by the width using a for loop. Next I set s to substring of message from i to i + width. message[i:i + width].
+      After that I set y to decimal representation of the binary string s and decrypted each value and stored it in a variable
+      rsa.decrypt(y, n, d). Lastly I converted the variable into a char and displayed it.
 
-      Issues and resolution: ...
+      Issues and resolution: I found it difficult tyring to figure out the loop and what to put into the loop to get length of message, for i ∈ [0, l − 1)
+      and in increments of width. I was trying to use a for each loop to get only the letters and try incrementing the increments of width
+      inside the loop. I realized I could just use a for in range loop and use the third agreement for the increments. I did not realize I
+      could use for in range for that. for i in range(0, len(message) - 1, width). Doing this saved me for extra lines of code and many logic
+      errors.
 
 5. List any other comments here. Feel free to provide any feedback on how
    much you learned from doing the assignment, and whether you enjoyed
    doing it.
 
-   ...
+   Doing this assignment allowed me to greatly improve my programming skills. Through this I learned alot more about using functions
+   I practiced the programming we were learning in class. My problem-solving skills in programming has greatly improved since the
+   first project. This project would have taken me so much longer to do a month ago. I honestly had more trouble with the second prject
+   more than this one because I did not know much about coding. I enjoyed this project but there were times I ran into bugs that took
+   me a long time to solve.

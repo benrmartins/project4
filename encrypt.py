@@ -9,7 +9,7 @@ def main():
     n = int(sys.argv[1])
     e = int(sys.argv[2])
 
-    # Get the number of bits per character (call it width) needed for encryption, ie, number of bits needed to encode n
+    # Get the number of bits per character needed for encryption number of bits needed to encode n
     width = rsa.bitLength(n)
 
     # Accept message to encrypt from standard input.
@@ -22,7 +22,7 @@ def main():
         y = rsa.encrypt(x, n, e)
         encrypt = rsa.dec2bin(y, width)
         # Displayed the encrypted input
-        stdio.write(binary)
+        stdio.write(encrypt)
     stdio.writeln()
 
 
